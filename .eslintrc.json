@@ -1,0 +1,31 @@
+{
+  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  //上面表示 我们这个项目使用airbnb 进行js 的style guide，使用prettier，和node环境的plugin
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "spaced-comment": "off",
+    "no-console": "warn", // 这里表示 我们项目里如果使用console.log（“”）会出现警告，如果想关了这个警告，可以改为"off"
+    "consistent-return": "warn", //这里表示我们把“要求每个函数都必须有返回值的设置改为”off“，因为有时候就是会有不需要返回值的情况
+    "func-names": "off",
+    "object-shorthand": "off",
+    "no-process-exit": "off",
+    "no-param-reassign": "off",
+    "no-return-await": "off",
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "prefer-destructuring": ["error", { "object": false, "array": false }],
+    "no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "req|res|next|val|error" }
+    ],
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "ignorePackages": "always"
+      }
+    ]
+    //上面一行表示，对于没有使用的vars会发出错误，需要把这个vars删除，但有一些例外，比如req,res,next,val等可以进行设置
+  }
+}
