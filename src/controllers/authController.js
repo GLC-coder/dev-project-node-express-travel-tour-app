@@ -1,10 +1,10 @@
 import crypto from 'node:crypto';
 import jwt from 'jsonwebtoken';
 
-import User from '../models/UserModel';
-import catchAsyncError from '../utils/catchAsyncError';
-import ErrorModel from '../utils/errorModel';
-import sendEmail from '../utils/sendEmail';
+import User from '../models/UserModel.js';
+import catchAsyncError from '../utils/catchAsyncError.js';
+import ErrorModel from '../utils/errorModel.js';
+import sendEmail from '../utils/sendEmail.js';
 
 //Create the token
 const createToken = (id) =>

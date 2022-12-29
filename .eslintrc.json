@@ -19,13 +19,7 @@
       "error",
       { "argsIgnorePattern": "req|res|next|val|error" }
     ],
-    "import/extensions": [
-      "error",
-      "never",
-      {
-        "ignorePackages": "always"
-      }
-    ]
+    "import/extensions": ["error", "always"]
     //上面一行表示，对于没有使用的vars会发出错误，需要把这个vars删除，但有一些例外，比如req,res,next,val等可以进行设置
   }
 }

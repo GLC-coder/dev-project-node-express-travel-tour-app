@@ -9,12 +9,12 @@ import {
   getMonthlyPlan,
   getTourWithin,
   getDistances,
-} from '../controllers/tourController';
-import reviewRouter from './reviewRouter';
+} from '../controllers/tourController.js';
+import reviewRouter from './reviewRouter.js';
 
-import aliasTop5CheapTours from '../middleware/aliasTop5CheapTours';
-import protectMiddleware from '../middleware/protectMiddleware';
-import restrictMiddleware from '../middleware/restrictMiddleware';
+import aliasTop5CheapTours from '../middleware/aliasTop5CheapTours.js';
+import protectMiddleware from '../middleware/protectMiddleware.js';
+import restrictMiddleware from '../middleware/restrictMiddleware.js';
 
 const router = express.Router();
 //Nested route: Post the specified tour's review by tourId;

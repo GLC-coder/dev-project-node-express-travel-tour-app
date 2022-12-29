@@ -6,10 +6,10 @@ import {
   deleteReview,
   getReview,
   updateReview,
-} from '../controllers/reviewController';
-import protectMiddleware from '../middleware/protectMiddleware';
-import restrictMiddleware from '../middleware/restrictMiddleware';
-import setTourUserIds from '../middleware/setTourUserIds';
+} from '../controllers/reviewController.js';
+import protectMiddleware from '../middleware/protectMiddleware.js';
+import restrictMiddleware from '../middleware/restrictMiddleware.js';
+import setTourUserIds from '../middleware/setTourUserIds.js';
 
 const router = express.Router({ mergeParams: true });
 

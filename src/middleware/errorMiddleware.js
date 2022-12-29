@@ -1,4 +1,4 @@
-import ErrorModel from '../utils/errorModel';
+import ErrorModel from '../utils/errorModel.js';
 
 const handleCastError = (error) => {
   const message = `Invalid ${error.path} : ${error.value}`;

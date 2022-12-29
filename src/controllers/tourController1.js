@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-return */
-import Tour from '../models/TourModel';
-import APIFeatures from '../utils/apiFeatures-model';
-import ErrorModel from '../utils/errorModel';
+import Tour from '../models/TourModel.js';
+import APIFeatures from '../utils/apiFeatures-model.js';
+import ErrorModel from '../utils/errorModel.js';
 
 export const createTour = async (req, res, next) => {
   try {

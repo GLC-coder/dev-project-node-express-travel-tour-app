@@ -1,14 +1,14 @@
 /* eslint-disable no-useless-return */
-import Tour from '../models/TourModel';
-import catchAsyncError from '../utils/catchAsyncError';
+import Tour from '../models/TourModel.js';
+import catchAsyncError from '../utils/catchAsyncError.js';
 import {
   deleteOne,
   updateOne,
   createOne,
   getOne,
   getAll,
-} from './handlerFactory';
-import ErrorModel from '../utils/errorModel';
+} from './handlerFactory.js';
+import ErrorModel from '../utils/errorModel.js';
 // import APIFeatures from "../utils/apiFeatures-model.js";
 
 /*use handlerFactorry */

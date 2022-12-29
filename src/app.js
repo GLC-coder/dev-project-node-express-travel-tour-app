@@ -7,13 +7,13 @@ import mongoSanitize from 'express-mongo-sanitize';
 import xss from 'xss-clean';
 import hpp from 'hpp';
 
-import errorMiddleware from './middleware/errorMiddleware';
-import ErrorModel from './utils/errorModel';
-import rateLimitMiddleware from './middleware/rateLimitMiddleware';
+import errorMiddleware from './middleware/errorMiddleware.js';
+import ErrorModel from './utils/errorModel.js';
+import rateLimitMiddleware from './middleware/rateLimitMiddleware.js';
 
-import tourRouter from './routers/tourRouter';
-import userRouter from './routers/userRouter';
-import reviewRouter from './routers/reviewRouter';
+import tourRouter from './routers/tourRouter.js';
+import userRouter from './routers/userRouter.js';
+import reviewRouter from './routers/reviewRouter.js';
 
 dotenv.config();
 const app = express();

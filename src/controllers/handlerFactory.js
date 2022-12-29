@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-return */
-import catchAsyncError from '../utils/catchAsyncError';
-import ErrorModel from '../utils/errorModel';
-import APIFeatures from '../utils/apiFeatures-model';
+import catchAsyncError from '../utils/catchAsyncError.js';
+import ErrorModel from '../utils/errorModel.js';
+import APIFeatures from '../utils/apiFeatures-model.js';
 
 export const deleteOne = (Model) =>
   catchAsyncError(async (req, res, next) => {

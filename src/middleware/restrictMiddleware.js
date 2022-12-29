@@ -1,4 +1,4 @@
-import ErrorModel from '../utils/errorModel';
+import ErrorModel from '../utils/errorModel.js';
 
 //Only "admin" or "lead-guide" have the permission to delete a tour
 const restrictMiddleware =

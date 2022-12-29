@@ -1,6 +1,6 @@
-import User from '../models/UserModel';
-import catchAsyncError from '../utils/catchAsyncError';
-import { deleteOne, updateOne, getOne, getAll } from './handlerFactory';
+import User from '../models/UserModel.js';
+import catchAsyncError from '../utils/catchAsyncError.js';
+import { deleteOne, updateOne, getOne, getAll } from './handlerFactory.js';
 
 //Only admin has the permission to update a user Except update the user password
 export const updateUser = updateOne(User);

@@ -1,8 +1,8 @@
 import { promisify } from 'util';
 import jwt from 'jsonwebtoken';
-import User from '../models/UserModel';
-import catchAsyncError from '../utils/catchAsyncError';
-import ErrorModel from '../utils/errorModel';
+import User from '../models/UserModel.js';
+import catchAsyncError from '../utils/catchAsyncError.js';
+import ErrorModel from '../utils/errorModel.js';
 
 const protectMiddleware = catchAsyncError(async (req, res, next) => {
   // 1)Check if the token is exsited

@@ -1,11 +1,11 @@
-import Review from '../models/ReviewModel';
+import Review from '../models/ReviewModel.js';
 import {
   deleteOne,
   updateOne,
   createOne,
   getOne,
   getAll,
-} from './handlerFactory';
+} from './handlerFactory.js';
 // import catchAsyncError from "../utils/catchAsyncError.js";
 
 //create a new review by create factory, if use factory,

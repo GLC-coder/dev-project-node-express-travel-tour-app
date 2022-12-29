@@ -8,16 +8,16 @@ import {
   deleteUser,
   updateMe,
   deleteMe,
-} from '../controllers/userContorller';
+} from '../controllers/userContorller.js';
 import {
   signUp,
   signIn,
   forgetPassword,
   resetPassword,
   updatePassword,
-} from '../controllers/authController';
-import protectMiddleware from '../middleware/protectMiddleware';
-import restrictMiddleware from '../middleware/restrictMiddleware';
+} from '../controllers/authController.js';
+import protectMiddleware from '../middleware/protectMiddleware.js';
+import restrictMiddleware from '../middleware/restrictMiddleware.js';
 
 const router = express.Router();
 
