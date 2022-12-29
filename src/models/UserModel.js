@@ -6,7 +6,7 @@ import crypto from 'node:crypto';
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    reuqired: [true, 'Please tell us your name!'],
+    required: [true, 'Please tell us your name!'],
   },
   role: {
     type: String,
