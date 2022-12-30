@@ -44,13 +44,13 @@ const sendResponseAndToken = (user, statusCode, res) => {
 
 //new user sign up and create a token for the user
 export const signUp = catchAsyncError(async (req, res, next) => {
-  // const newUser = await User.create({
-  //   name: req.body.name,
-  //   email: req.body.email,
-  //   password: req.body.password,
-  //   passwordConfirm: req.body.passwordConfirm,
-  // });
-  const newUser = await User.create(req.body);
+  const newUser = await User.create({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+    passwordConfirm: req.body.passwordConfirm,
+  });
+  // const newUser = await User.create(req.body);
 
   sendResponseAndToken(newUser, 201, res);
 });
