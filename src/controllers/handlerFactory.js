@@ -48,10 +48,10 @@ export const createOne = (Model) =>
     return;
   });
 
-export const getOne = (Model, poplateOptions) =>
+export const getOne = (Model, populateOptions) =>
   catchAsyncError(async (req, res, next) => {
     let query = Model.findById(req.params.id).select('-__v');
-    if (poplateOptions) query = query.populate(poplateOptions);
+    if (populateOptions) query = query.populate(populateOptions);
     const doc = await query;
 
     //const tour = await Tour.findOne({_id: req.params.id})
@@ -92,6 +92,5 @@ export const getAll = (Model) =>
         data: doc,
       },
     });
-    // // eslint-disable-next-line no-useless-return
     return;
   });

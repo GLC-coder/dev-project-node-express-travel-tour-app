@@ -2,9 +2,9 @@ import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import fs from 'fs';
 
-import Tour from '../../src/models/TourModel';
-import Review from '../../src/models/ReviewModel';
-import User from '../../src/models/UserModel';
+import Tour from '../../src/models/TourModel.js';
+import Review from '../../src/models/ReviewModel.js';
+import User from '../../src/models/UserModel.js';
 
 dotenv.config();
 const DB = process.env.DATABASE.replace(
@@ -17,6 +17,7 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
+    useUnifiedTopology: true,
   })
   .then(() => console.log('database connect successfully!'));
 
@@ -35,7 +36,8 @@ const reviews = JSON.parse(
 const importData = async () => {
   try {
     await Tour.create(tours);
-    // await User.create(users, { validateBeforeSave: false }); this is used for disabling the validation for passwordConfirm
+    // this is used for disabling the validation for passwordConfirm
+    // await User.create(users, { validateBeforeSave: false });
     await User.create(users);
     await Review.create(reviews);
     console.log('ImportData successfully!');

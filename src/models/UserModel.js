@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Please provide your email.'],
     unique: true,
     lowercase: true,
-    validate: [validator.isEmail, 'Please provide a valida email!'],
+    validate: [validator.isEmail, 'Please provide a validated email!'],
   },
   photo: String,
   password: {
@@ -60,16 +60,16 @@ userSchema.pre('save', async function (next) {
   this.passwordConfirm = undefined;
   next();
 });
-
-//Filtered the deleted user from get all users or Id
-userSchema.pre(/^find/, async function (next) {
-  this.find({ active: { $ne: false } });
-  next();
-});
 //created password changed time and save it to document after user changed the password
 userSchema.pre('save', function (next) {
   if (!this.isModified('password') || this.isNew) return next();
   this.passwordChangeAt = Date.now() - 1000;
+  next();
+});
+
+//Filtered the deleted user from get all users or Id
+userSchema.pre(/^find/, async function (next) {
+  this.find({ active: { $ne: false } });
   next();
 });
 

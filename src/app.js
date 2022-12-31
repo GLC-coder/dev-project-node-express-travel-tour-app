@@ -36,6 +36,7 @@ app.use(
       'ratingsQuantity',
       'maxGroupSize',
       'difficulty',
+      'price',
     ],
   })
 );

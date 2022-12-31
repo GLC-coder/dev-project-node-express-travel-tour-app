@@ -103,6 +103,10 @@ export const forgetPassword = catchAsyncError(async (req, res, next) => {
   };
   try {
     await sendEmail(options);
+    res.status(200).json({
+      status: 'success',
+      message: 'Token sent to email!',
+    });
   } catch (error) {
     user.passwordResetToken = undefined;
     user.passwordResetTokenExpires = undefined;
@@ -114,11 +118,6 @@ export const forgetPassword = catchAsyncError(async (req, res, next) => {
       )
     );
   }
-
-  res.status(200).json({
-    status: 'success',
-    message: 'Token sent to email successfully!',
-  });
 });
 
 export const resetPassword = catchAsyncError(async (req, res, next) => {
@@ -144,6 +143,7 @@ export const resetPassword = catchAsyncError(async (req, res, next) => {
   await user.save();
 
   //3)Update changedPasswordAt property for the user
+  //  -> at the user model using pre document middleware
   //4)Log the user in and send back the JWT TOKEN
 
   sendResponseAndToken(user, 201, res);

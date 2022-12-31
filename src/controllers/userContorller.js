@@ -35,9 +35,8 @@ export const updateMe = catchAsyncError(async (req, res, next) => {
     return next(new Error('Can not update password here', 400));
   }
 
-  //Filter the body if user trys to update the not allowed fields
+  //Filter the body if user trys to update the not allowed fields,such as "role" is not allowed
   const filteredBody = filterObj(req.body, 'name', 'email');
-  console.log('first');
   //Update the user date
   const updatedUser = await User.findByIdAndUpdate(req.user._id, filteredBody, {
     new: true,

@@ -10,7 +10,7 @@ const tourSchema = new mongoose.Schema(
       required: [true, 'A tour must have a name'],
       unique: true,
       trim: true,
-      maxlength: [40, 'A tour must have less or equeal then 40 charactes'],
+      maxlength: [40, 'A tour must have less or equal then 40 characters'],
       minlength: [10, 'A  tour must have more or equal than 10 characters!'],
       // validate: [validator.isAlpha, "Tour name must only contain characters"],
       //This is a validate using the validator library
@@ -87,7 +87,7 @@ const tourSchema = new mongoose.Schema(
         enum: ['Point'],
       },
       coordinates: [Number],
-      addresss: String,
+      address: String,
       description: String,
     },
     locations: [
