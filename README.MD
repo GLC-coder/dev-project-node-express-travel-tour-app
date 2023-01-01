@@ -36,21 +36,21 @@ $ node ./dev-data/data/import-dev-data.js --clear
 
 Add a file named `.env` at the root directory, and copy the environment name into the file and use the value from yourself.
 
-NODE_ENV=
-DATABASE_USERNAME=
+NODE_ENV= <br>
+DATABASE_USERNAME=<br>
 DATABASE=
-DATABASE_PASSWORD=
-PASSWORD=
-PORT=
+DATABASE_PASSWORD=<br>
+PASSWORD=<br>
+PORT=<br>
 
-JWT_SECRET=
-JWT_EXPIRES_IN=
-JWT_COOKIE_EXPIRES_IN=
+JWT_SECRET=<br>
+JWT_EXPIRES_IN=<br>
+JWT_COOKIE_EXPIRES_IN=<br>
 
-EMAIL_HOST=
-EMAIL_PORT=
-EMAIL_USERNAME=
-EMAIL_PASSWORD=
+EMAIL_HOST=<br>
+EMAIL_PORT=<br>
+EMAIL_USERNAME=<br>
+EMAIL_PASSWORD=<br>
 
 ## Project Tech Stack
 
