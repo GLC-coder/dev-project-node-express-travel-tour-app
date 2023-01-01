@@ -6,16 +6,14 @@ import ErrorModel from '../utils/errorModel.js';
 
 const protectMiddleware = catchAsyncError(async (req, res, next) => {
   // 1)Check if the token is exsited
+
   let token;
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith('Bearer')
-  ) {
-    token = req.headers.authorization.split(' ')[1];
+  if (req.headers.cookie && req.headers.cookie.startsWith('jwt')) {
+    token = req.headers.cookie.split('=')[1];
   }
 
   if (!token) {
-    return next(new ErrorModel('You must log in to get the permisssion!', 401));
+    return next(new ErrorModel('You must log in to get the permission!', 401));
   }
 
   // 2)Check if the token is valid or unexpired
@@ -37,7 +35,6 @@ const protectMiddleware = catchAsyncError(async (req, res, next) => {
     );
   }
   req.user = currentUser;
-  console.log(req.user);
   next();
 });
 

@@ -12,6 +12,7 @@ import {
 import {
   signUp,
   signIn,
+  signOut,
   forgetPassword,
   resetPassword,
   updatePassword,
@@ -25,6 +26,8 @@ const router = express.Router();
 router.post('/signup', signUp);
 // Sign In router
 router.post('/signin', signIn);
+//Sign Out
+router.get('/signout', protectMiddleware, signOut);
 router.post('/forgetpassword', forgetPassword);
 router.patch('/resetpassword/:token', resetPassword);
 
@@ -34,7 +37,9 @@ router.patch('/resetpassword/:token', resetPassword);
 
 //method2
 router.get('/me', protectMiddleware, getMe, getUser);
-router.route('/').get(protectMiddleware, getAllUsers);
+router
+  .route('/')
+  .get(protectMiddleware, restrictMiddleware('admin'), getAllUsers);
 router.patch('/updatepassword/', protectMiddleware, updatePassword);
 router.patch('/updateme', protectMiddleware, updateMe);
 router.delete('/deleteme', protectMiddleware, deleteMe);

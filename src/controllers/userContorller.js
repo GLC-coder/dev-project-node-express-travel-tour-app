@@ -69,7 +69,6 @@ export const deleteMe = catchAsyncError(async (req, res, next) => {
 
 export const getMe = (req, res, next) => {
   req.params.id = req.user._id;
-  console.log(req.params.id);
   next();
 };
 

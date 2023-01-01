@@ -78,6 +78,16 @@ export const signIn = catchAsyncError(async (req, res, next) => {
   sendResponseAndToken(user, 201, res);
 });
 
+export const signOut = (req, res, next) => {
+  console.log('signout');
+  const token = undefined;
+  res.cookie('jwt', token, {
+    expires: new Date(Date.now() + 1 * 1000),
+    httpOnly: true,
+  });
+  res.status(200).json({ status: 'success', token, data: '11111' });
+};
+
 export const forgetPassword = catchAsyncError(async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email });
   if (!user)
